@@ -1,46 +1,53 @@
-import Ecommerce from '../components/Views/Ecommerce';
-import Segment from '../components/Views/Segment';
-import Mortgage from '../components/Views/Mortgage';
-import CarInsuranceClaim from '../components/Views/CarInsuranceClaim';
-import Banner from '../components/Banner';
-import Slides from '../components/Slides';
+import Ecommerce from "../components/Views/Ecommerce";
+import Segment from "../components/Views/Segment";
+import Mortgage from "../components/Views/Mortgage";
+import CarInsuranceClaim from "../components/Views/CarInsuranceClaim";
+import Banner from "../components/Banner";
+import Slides from "../components/Slides";
+import FauxService from "../components/Views/FauxService";
 
 const viewsList = [
   {
-    industry: 'eCommerce',
+    industry: "Service",
+    componentName: FauxService,
+    label: "Service",
+    key: "service",
+  },
+  {
+    industry: "eCommerce",
     componentName: Ecommerce,
-    label: 'eCommerce',
-    key: 'ecommerce',
+    label: "eCommerce",
+    key: "ecommerce",
   },
   {
-    industry: 'segment',
+    industry: "segment",
     componentName: Segment,
-    label: 'Segment',
-    key: 'segment',
+    label: "Segment",
+    key: "segment",
   },
   {
-    industry: 'Finance',
+    industry: "Finance",
     componentName: CarInsuranceClaim,
-    label: 'Car Insurance Claim',
-    key: 'carInsuranceClaim',
+    label: "Car Insurance Claim",
+    key: "carInsuranceClaim",
   },
   {
-    industry: 'Finance',
+    industry: "Finance",
     componentName: Mortgage,
-    label: 'Mortgage',
-    key: 'mortgage',
+    label: "Mortgage",
+    key: "mortgage",
   },
   {
-    industry: 'Custom',
+    industry: "Custom",
     componentName: Slides,
-    label: 'Google Slides',
-    key: 'slides',
+    label: "Google Slides",
+    key: "slides",
   },
   {
-    industry: 'NO TASK',
+    industry: "NO TASK",
     componentName: Banner,
-    label: 'Splash Screen',
-    key: 'banner',
+    label: "Splash Screen",
+    key: "banner",
   },
 ];
 

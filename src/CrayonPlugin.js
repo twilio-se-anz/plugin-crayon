@@ -1,18 +1,20 @@
-import React from 'react';
-import Panel from './components/Panel';
-import { FlexPlugin, loadCSS } from '@twilio/flex-plugin';
-import { customerData } from './data/CustomerData';
+import React from "react";
+import Panel from "./components/Panel";
+import { FlexPlugin, loadCSS } from "@twilio/flex-plugin";
+import { customerData } from "./data/CustomerData";
 
 import {
   addViewsConfigurator,
   applyThemeOverrides,
   getAccountSidShortened,
   fetchCustomData,
-} from './helpers';
+} from "./helpers";
 
-import { addTaskCanvasTabs } from './taskCanvasTabs';
+import { addTaskCanvasTabs } from "./taskCanvasTabs";
 
-const PLUGIN_NAME = 'CrayonPlugin';
+const PLUGIN_NAME = "CrayonPlugin";
+
+import { CustomizationProvider } from "@twilio-paste/core/customization";
 
 export default class CrayonPlugin extends FlexPlugin {
   constructor() {
@@ -27,9 +29,14 @@ export default class CrayonPlugin extends FlexPlugin {
    * @param manager { import('@twilio/flex-ui').Manager }
    */
 
-   async init(flex, manager) {
+  async init(flex, manager) {
+    // Add Paste
+    flex.setProviders({
+      PasteThemeProvider: CustomizationProvider,
+    });
 
-    loadCSS('https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css');
+    // Load external CSS
+    loadCSS("https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css");
 
     //Basic generic Flex UI changes
 
@@ -44,14 +51,14 @@ export default class CrayonPlugin extends FlexPlugin {
     // manager.strings.NoTasks = "Insurance Made Simple";
 
     // Remove the black bar at the top pf the screen that let's you switch Twilio projects - This exposes all your other customer environments
-    flex.RootContainer.Content.remove('project-switcher');
+    flex.RootContainer.Content.remove("project-switcher");
 
     //Logo for use in the main header - Always store them in this assets service - images-5674.twil.io
 
     //This sets the default size for panel 1 and panel 2 - This is not necessary when hosted on flex.twilio.com. 400px is a sensible panel 1 size on MBP screens
     flex.AgentDesktopView.defaultProps.splitterOptions = {
-      initialFirstPanelSize: '400px',
-      minimumFirstPanelSize: '400px',
+      initialFirstPanelSize: "400px",
+      minimumFirstPanelSize: "400px",
     };
 
     //This replaces "CRM Container" or "Panel2" with our own custom panel that we use to swtich between screen pops
