@@ -36,10 +36,18 @@ const FauxService = () => {
         </Column>
 
         <Column span={8}>
-          <Stack orientation={"vertical"} spacing="space50">
-            <FauxHistory />
-            <FauxSuggestions />
-          </Stack>
+          <Card padding="space70">
+            <Stack orientation={"vertical"} spacing="space50">
+              <Heading as={"h2"} variant={"heading40"}>
+                Customer Context
+              </Heading>
+              <FauxHistory />
+              <Heading as={"h2"} variant={"heading40"}>
+                Proactive Knowledge
+              </Heading>
+              <FauxSuggestions />
+            </Stack>
+          </Card>
         </Column>
       </Grid>
     </Box>
