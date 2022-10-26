@@ -15,7 +15,8 @@ function addTaskCanvasTabs(flex, accountSid, customerData) {
         key={tab.id}
       >
         <TabContentComponent key={tab.id} data={customerData} />
-      </Tab>
+      </Tab>,
+      tab.options
     );
   }
 }

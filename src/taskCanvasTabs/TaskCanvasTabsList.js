@@ -10,6 +10,9 @@ const taskCanvasTabsList = [
     id: 'taskCanvasTabVerify',
     icon: <VerifiedUserIcon />,
     component: VerifyTab,
+    options: {
+      if: (props) => props.task.attributes.direction !== 'outbound',
+    },
   },
   {
     label: 'Video',
